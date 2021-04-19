@@ -32,6 +32,7 @@
 		}
 		public function drive(){
 			echo' Driving'.' '.$this->$miles += 10,'<br>';
+            return $this;
 		}
 		public function reverse(){
 			if($this->$miles <= 0){
@@ -39,36 +40,28 @@
 			}else{
 				echo' Reversing'.' '.$this->$miles -= 5,'<br>';
 			}
-			
+			return $this;
 		}
 	}
 	echo 'Mountain bike <br>';
 	$mountain_bike = new Bike('bike1');
 	$mountain_bike->set_price(100);
 	$mountain_bike->set_max_speed(30);
-	$mountain_bike->drive();
-	$mountain_bike->drive();
-	$mountain_bike->drive();
-	$mountain_bike->reverse();
+	$mountain_bike->drive()->drive()->drive()->reverse();
 	echo $mountain_bike->displayInfo().'<br>';
 	
 	echo 'Road bike <br>';
 	$road_bike = new Bike('bike2');
 	$road_bike->set_price(110);
 	$road_bike->set_max_speed(45);
-	$road_bike->drive();
-	$road_bike->drive();
-	$road_bike->drive();
-	$road_bike->reverse();
+	$road_bike->drive()->drive()->drive()->reverse();
 	echo $road_bike->displayInfo().'<br>';
 
 	echo 'Racer bike <br>';
 	$racer_bike = new Bike('bike3');
 	$racer_bike->set_price(125);
 	$racer_bike->set_max_speed(60);
-	$racer_bike->reverse();
-	$racer_bike->reverse();
-	$racer_bike->reverse();
+	$racer_bike->reverse()->reverse()->reverse();
 	echo $racer_bike->displayInfo().'<br>';
 
 ?>
